@@ -1,5 +1,33 @@
-<h2>A fine list of Cocktails</h2>
-  <% @cocktails.each do |cocktail| %>
-  <h5><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
-  <% end %>
-<p><i><%= link_to "Create a Cocktail", new_cocktail_path %></i></p>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(74,19,39,0.6) 0%, rgba(48,52,63,0.6) 50%), url(<%= image_path 'banner-photo.jpg'%>)">
+  <div class="banner-content">
+    <h1>Pints</h1>
+    <span id="banner-typed-text"></span>
+  </div>
+</div>
+
+<div class="navbar-wagon">
+  <h2>A fine list of Cocktails</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/360/175');">
+          <div class="card-category">
+            <h5><%= cocktail.name %></h5>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div>
+</div>
+
+<div>
+  <p><i><%= link_to "Create a Cocktail", new_cocktail_path %></i></p>
+</div>

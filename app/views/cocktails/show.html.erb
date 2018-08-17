@@ -28,7 +28,7 @@
             <td><i class="far fa-hand-point-right"></i></td>
             <td><%= dose.description%></td>
             <td><%= dose.ingredient.name %></td>
-            <td><%=link_to "", dose_path(dose), class: "far fa-trash-alt" %></td>
+            <td><%=link_to " ", dose_path(dose), method: 'delete', class: "far fa-trash-alt" %></td>
           </tr>
           <% end %>
         </table>

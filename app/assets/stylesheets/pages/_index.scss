@@ -3,13 +3,13 @@
 
 .new-wrapper {
   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url("new-background.jpg");
-  height: 100vh;
-  position: sticky;
-  top: 0;
+  height: 150vh;
 }
 
 .cocktail-form-container {
   margin: 30px 400px;
+  position: sticky;
+  top: 80px;
 }
 
 .cocktail-form-content {

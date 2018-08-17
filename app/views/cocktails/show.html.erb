@@ -1,17 +1,45 @@
-<h2><%= @cocktail.name %></h2>
+<div class="new-wrapper">
+  <div class="navbar-wagon navbar-wagon-blue">
+    <h1>Pints</h1>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <i class="fas fa-glass-martini navbar-wagon-item" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Cocktails</a></li>
+          <li><a href="#">Beers</a></li>
+          <li><a href="#">Wine</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <div class="cocktail-form-container">
+    <div class="form-group">
+      <div class="cocktail-form-content">
+        <h2><%= @cocktail.name %></h2>
+        <table class="cocktail-table">
+          <tr>
+            <th></th>
+            <th><strong>Dose</strong></th>
+            <th><strong>Ingredient</strong></th>
+          </tr>
+          <% @cocktail.doses.each do |dose| %>
+          <tr>
+            <td><i class="far fa-hand-point-right"></i></td>
+            <td><%= dose.description%></td>
+            <td><%= dose.ingredient.name %></td>
+            <td><%=link_to "", dose_path(dose), class: "far fa-trash-alt" %></td>
+          </tr>
+          <% end %>
+        </table>
+        <%= simple_form_for ([@cocktail, @dose]) do |f| %>
+          <%= f.input :description, label: 'New dose?', error: 'That\'s already an ingredient!'%>
+          <%= f.association :ingredient %>
+          <p> <%= f.button :submit, class: "cocktail-btn"%>
+          <%= link_to "", cocktails_path, class: "fas fa-home home-btn" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <% @cocktail.doses.each do |dose| %>
-    <p> <%= dose.description%> <%= dose.ingredient.name %> <%=link_to "Delete Ingredient?", dose_path(dose) %></p>
-  <% end %>
-
-
-
-<%= simple_form_for ([@cocktail, @dose]) do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit %>
-<% end %>
-
-
-<p><i><%= link_to "Return Home", cocktails_path %></i></p>

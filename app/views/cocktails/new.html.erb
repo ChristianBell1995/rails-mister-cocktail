@@ -1,7 +1,27 @@
-<div>
-  <h2>Add a Cocktail</h2>
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit%>
-  <% end %>
+<div class="new-wrapper">
+  <div class="navbar-wagon navbar-wagon-blue">
+    <h1>Pints</h1>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <i class="fas fa-glass-martini navbar-wagon-item" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Cocktails</a></li>
+          <li><a href="#">Beers</a></li>
+          <li><a href="#">Wine</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cocktail-form-container">
+    <div class="form-group">
+      <div class="cocktail-form-content">
+        <h2>Add a Cocktail</h2>
+        <%= simple_form_for(@cocktail) do |f| %>
+          <%= f.input :name, label: 'What\'s your cocktail called?', error: 'That\'s already a cocktail!' %>
+          <%= f.button :submit, class: "cocktail-btn"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,2 +1,62 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.new-wrapper {
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url("new-background.jpg");
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.cocktail-form-container {
+  margin: 30px 400px;
+}
+
+.cocktail-form-content {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #020044;
+  font-weight: bold;
+  color: #F4F4F4;
+  min-height: 200px;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("card-photo.jpg");
+}
+
+.cocktail-form-content a {
+  text-decoration: none;
+  color: #F4F4F4;
+}
+
+.cocktail-form-content p{
+  letter-spacing: 2px;
+}
+
+.cocktail-btn {
+  border: 1px solid #999999;
+  color: black;
+  opacity: 0.6;
+  border-radius: 50px;
+  padding: 15px;
+  font-weight: lighter;
+}
+
+.cocktail-btn:hover {
+  opacity: 1;
+}
+
+.home-btn {
+  font-size: 30px;
+  margin-left: 200px;
+  z-index: 100;
+  padding-top: 10px;
+}
+
+.cocktail-table td {
+  margin: 10px;
+  padding: 16px;
+}
+
+.cocktail-table tr {
+  opacity: 0.8;
+}
